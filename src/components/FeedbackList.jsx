@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
-import { getFeedbacks } from '../data/FeedbackData';
 import FeedbackItem from './FeedbackItem';
 
 class FeedbackList extends Component {
 
 
   state = {
-    feedbacks: getFeedbacks()
+    feedbacks: [
+      {
+        id: 1,
+        user: 'happyBlogger',
+        rating: 5,
+        text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure eveniet quam minima perferendis architecto facere est quidem commodi ea. Nisi, voluptatibus alias repellat cupiditate cumque natus distinctio debitis doloribus similique.'
+      },
+      {
+        id: 2,
+        user: 'draganXXX',
+        rating: 3,
+        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio natus voluptate repudiandae. Veniam, dicta libero.'
+      },
+      {
+        id: 3,
+        user: 'marylinMaginson',
+        rating: 4,
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, distinctio.'
+      }
+    ]
   };
+
 
   handleDelete = (feedbackId) => {
     const feedbacks = this.state.feedbacks.filter(f => f.id !== feedbackId);
